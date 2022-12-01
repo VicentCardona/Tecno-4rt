@@ -1,0 +1,32 @@
+PImage im[]=new PImage[10];
+String imFile[]={'cero.png', 'uno.png','dos.png','tres.png', 'cuatro.png', 'cinco.png', 'seis.png', 'siete.png', 'ocho.png', 'nueve.png'};
+void setup() {
+size(1600,	400);		
+	for (int i = 0; i < 10; i = i + 1) {
+im[i] = loadImage(imFile[i]); // Carga la imagen segun el contador ‘i’
+ }
+	
+}
+
+void draw() {
+	int h=hour(); 						//Toma las horas del reloj del ordenador para almacenarlos en una variable
+	int h_dec =int(h/10);			// Extrae el digito de mayor peso de las horas (decenas)
+	int h_uni = h-h_dec*10;		 // Extrae el digito de menor peso de las horas (unidades)
+	image(im[h_dec], 0, 95);		//Muestra el dígito de las decenas
+	image(im[h_uni],150,95);		//Muestra el dígito de las unidades
+
+
+	int m=minute(); 						//Toma los minutos del reloj del ordenador para almacenarlos en una variable
+	int m_dec =int(m/10);			// Extrae el digito de mayor peso de los minutos (decenas)
+	int m_uni = m-m_dec*10;	// Extrae el digito de menor peso de los minutos (unidades)
+	image(im[m_dec],300, 95);		//Muestra el dígito de las decenas
+	image(im[m_uni],450,95);		//Muestra el dígito de las unidades
+	
+	int s=second(); 						//Toma los minutos del reloj del ordenador para almacenarlos en una variable
+	int s_dec =int(s/10);			// Extrae el digito de mayor peso de los minutos (decenas)
+	int s_uni = s-s_dec*10;	// Extrae el digito de menor peso de los minutos (unidades)
+	image(im[s_dec],600, 95);		//Muestra el dígito de las decenas
+	image(im[s_uni],750,95);		//Muestra el dígito de las unidades
+	
+
+}
