@@ -1,0 +1,30 @@
+//treim les imatges de una llista de Strings
+PImage im[]=new PImage[10];
+String imFile[]={'cero.png', 'uno.png','dos.png','tres.png', 'cuatro.png', 'cinco.png', 'seis.png', 'siete.png', 'ocho.png', 'nueve.png'};
+void setup() {
+size(1600,	400);			
+im[0] = loadImage(imFile[0]);
+im[1] = loadImage(imFile[1]);
+im[2] = loadImage(imFile[2]);
+im[3] = loadImage(imFile[3]);
+im[4] = loadImage(imFile[4]);
+im[5] = loadImage(imFile[5]);
+im[6] = loadImage(imFile[6]);
+im[7] = loadImage(imFile[7]);
+im[8] = loadImage(imFile[8]);
+im[9] = loadImage(imFile[9]);
+	
+}
+
+void draw() {
+image(im[0], 0, 0);
+image(im[1], 150, 0); 
+image(im[2], 300, 0); 
+image(im[3], 450, 0); 
+image(im[4], 600, 0); 
+image(im[5], 750, 0); 
+image(im[6], 900, 0); 
+image(im[7], 1050, 0); 
+image(im[8], 1300, 0); 
+image(im[9], 1450, 0); 
+}
