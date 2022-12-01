@@ -1,0 +1,29 @@
+PImage im[]=new PImage[10];
+
+void setup() {
+size(1600,	400);			
+im[0] = loadImage('cero.png');
+im[1] = loadImage('uno.png');
+im[2] = loadImage('dos.png');
+im[3] = loadImage('tres.png');
+im[4] = loadImage('cuatro.png');
+im[5] = loadImage('cinco.png');
+im[6] = loadImage('seis.png');
+im[7] = loadImage('siete.png');
+im[8] = loadImage('ocho.png');
+im[9] = loadImage('nueve.png');
+	
+}
+
+void draw() {
+image(im[0], 0, 0);
+image(im[1], 150, 0); 
+image(im[2], 300, 0); 
+image(im[3], 450, 0); 
+image(im[4], 600, 0); 
+image(im[5], 750, 0); 
+image(im[6], 900, 0); 
+image(im[7], 1050, 0); 
+image(im[8], 1300, 0); 
+image(im[9], 1450, 0); 
+}
