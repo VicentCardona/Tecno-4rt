@@ -1,0 +1,15 @@
+PImage im[]=new PImage[10];
+String imFile[]={'cero.png', 'uno.png','dos.png','tres.png', 'cuatro.png', 'cinco.png', 'seis.png', 'siete.png', 'ocho.png', 'nueve.png'};
+void setup() {
+size(1600,	400);		
+	for (int i = 0; i < 10; i = i + 1) {
+im[i] = loadImage(imFile[i]); // Carga la imagen segun el contador ‘i’
+ }
+	
+}
+
+void draw() {
+	for(int i=0;i<10;i=i+1){
+image(im[i], 150*i, 0);
+}
+}
