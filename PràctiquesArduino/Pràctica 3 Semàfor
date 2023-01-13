@@ -1,0 +1,57 @@
+//Definim LEDs
+#define GREEN 8
+#define YELLOW 9
+#define RED 10
+//Polsador connectat a entrada digital
+#define PULSADOR 7 
+
+void setup()
+{
+  //Configurem el pin digital de cada LED con a sortida
+  pinMode(GREEN, OUTPUT);
+  pinMode(RED, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  //Configurem el pin digital del polsador com a entrada
+  pinMode(PULSADOR, INPUT);
+  //Proba dels LED, encenem els 3
+  digitalWrite(GREEN, HIGH);
+  digitalWrite(RED, HIGH);
+  digitalWrite(YELLOW, HIGH);
+  //Esperam
+  delay(1000);
+  //Apaguem els LED
+  digitalWrite(GREEN, LOW);
+  digitalWrite(RED, LOW);
+  digitalWrite(YELLOW, LOW);
+}
+
+void loop()
+{
+ //Encenem el LED verd
+  digitalWrite(GREEN, HIGH);
+  //Esperam que el pulsador no estigui apretat
+  //Quan el polsados s'apreti, entram en bucle WHILE
+  while(digitalRead(PULSADOR)==true);
+  {
+   	//Apaguem el LED verd
+    digitalWrite(GREEN, LOW);
+    //Encenem i apaguem 5 vegades el LED grog mitjançant un bucle FOR
+    for(int i=0;i<5;i++)
+    {
+      //Encenem el LEd Grog
+      digitalWrite(YELLOW, HIGH);
+      //Esperem 0,5 segons
+      delay(500);
+      //Apaguem el Led GROG
+      digitalWrite(YELLOW, LOW);
+      //Esperem 0,5 segons
+      delay(500);
+    }
+  //Encenem el LED Vermell
+    digitalWrite(RED, HIGH);
+    //Esperem 6 segons
+    delay(6000);
+    //Apagam el LED Vermell
+    digitalWrite(RED,LOW);
+  }
+}
