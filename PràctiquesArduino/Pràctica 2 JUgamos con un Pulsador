@@ -1,0 +1,29 @@
+//Actividad 3: Jugando con unn Led y un pulsador
+
+#define LED 10
+#define PULSADOR 7
+
+void setup()
+{
+//Configuramos el pin digital del LED como salida
+pinMode(LED, OUTPUT)
+pinMode(PULSADOR, INPUT)
+}
+void loop()
+{
+  if(digitalRead(PULSADOR == true))
+    {
+    digitalWrite(LED, HIGH)
+    delay(1000)
+    digitalWrite(LED, LOW)
+    delay(1000)
+    }
+   else
+    {
+    digitalWrite(LED, HIGH)
+    delay(100)
+    digitalWrite(LED, LOW)
+    delay(100)
+    }
+   }
+    
