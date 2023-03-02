@@ -1,0 +1,40 @@
+/*
+Empezando con Arduino UNO
+Activitat: Control del brillo de un LED mediante un potenciómetro
+
+Leemos el valor entregado por un potencioḿetro conectado a una entrada analógica y ajustamos el brillo del LED
+
+*/
+
+//Asociamos el LED a una salida digital
+
+#define LED 6
+
+//Asociamos el potecniómetro con una entrada analógica
+
+#define POT 0
+
+//Definimos las variables para almacenar la medida y el valor que enviaremos a la salida PWM
+
+int medida_pot, valor_pwm;
+
+
+void setup() {
+  //Configuramos el pin digital del LED como salida
+  pinMode(LED,OUTPUT);
+    
+}
+
+void loop() {
+  //Almacenamos la lectura de la entrada analógica en la
+  //variable
+  medida_pot = analogRead(POT);
+  
+  //Ajustamos el rango de la entrada analógica al
+  //de la salida PWM
+  
+  valor_pwm = map (medida_pot,0,1023,0,255);
+  
+  //Enviamos el valor a la salida PWM
+  analogWrite(LED, valor_pwm);
+}
